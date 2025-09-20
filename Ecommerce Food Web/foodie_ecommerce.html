@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Delicious Food Delivered</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Foodie</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-btn" onclick="openCart()">
+                Cart <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Delicious Food Delivered Fast</h1>
+                <p>Order from your favorite restaurants and get fresh food delivered to your doorstep</p>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search for restaurants or dishes...">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Popular Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="filterCategory('pizza')">
+                    <div class="category-icon">🍕</div>
+                    <h3>Pizza</h3>
+                    <p>Hot & Fresh</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('burger')">
+                    <div class="category-icon">🍔</div>
+                    <h3>Burgers</h3>
+                    <p>Juicy & Delicious</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('sushi')">
+                    <div class="category-icon">🍣</div>
+                    <h3>Sushi</h3>
+                    <p>Fresh & Authentic</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('pasta')">
+                    <div class="category-icon">🍝</div>
+                    <h3>Pasta</h3>
+                    <p>Traditional Italian</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('dessert')">
+                    <div class="category-icon">🍰</div>
+                    <h3>Desserts</h3>
+                    <p>Sweet Treats</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('drinks')">
+                    <div class="category-icon">🥤</div>
+                    <h3>Drinks</h3>
+                    <p>Refreshing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="food-items" id="menu">
+        <div class="container">
+            <h2 class="section-title">Featured Dishes</h2>
+            <div class="food-grid" id="foodGrid">
+                <!-- Food items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Foodie</h3>
+                    <a href="#">Our Story</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Track Order</a>
+                </div>
+                <div class="footer-section">
+                    <h3>For Restaurants</h3>
+                    <a href="#">Partner with Us</a>
+                    <a href="#">Restaurant Dashboard</a>
+                    <a href="#">Delivery</a>
+                </div>
+            </div>
+            <p>&copy; 2025 Foodie. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" onclick="closeCart()">&times;</button>
+            </div>
+            <div id="cartItems">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-total">
+                Total: $<span id="cartTotal">0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+</body>
+
+</html>
